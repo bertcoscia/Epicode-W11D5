@@ -1,8 +1,13 @@
+import { Container, Row } from "react-bootstrap";
+import Aside from "./Aside";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <Container fluid>
+      <Row>
+        <Aside />
+      </Row>
+    </Container>
   );
 };
 
