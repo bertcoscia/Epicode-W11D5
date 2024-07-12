@@ -174,3 +174,9 @@ ul {
 .mainPage {
   height: calc(100vh - 85px);
 }
+
+.song-row {
+  color: #ffffff;
+  font-weight: 700;
+  padding-top: 50px;
+}

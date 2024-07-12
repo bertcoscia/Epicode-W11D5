@@ -2,7 +2,9 @@ export const GET_SONGS = "GET_SONGS";
 export const ADD_TO_FAVOURITE = "ADD_TO_FAVOURITE";
 export const REMOVE_FROM_FAVOURITE = "REMOVE_FROM_FAVOURITE";
 
-export const getSongsAction = (url, query) => {
+const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
+export const getSongsAction = query => {
   return dispatch => {
     fetch(url + query)
       .then(response => {
@@ -17,7 +19,6 @@ export const getSongsAction = (url, query) => {
           type: GET_SONGS,
           payload: result.data
         });
-        console.log(result.data);
       })
       .catch(error => console.log(error));
   };

@@ -1,7 +1,22 @@
+import { useState } from "react";
 import { Button, Col, Container, Form, InputGroup, Nav, Navbar } from "react-bootstrap";
 import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
+import { useDispatch } from "react-redux";
+import { getSongsAction } from "../redux/actions";
 
 const Aside = () => {
+  const [query, setQuery] = useState("");
+  const dispatch = useDispatch();
+
+  const handleChange = event => {
+    setQuery(event.target.value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    dispatch(getSongsAction(query));
+  };
+
   return (
     <Col md={2}>
       <Nav id="sidebar" className="navbar navbar-expand-md fixed-left justify-content-between">
@@ -27,9 +42,9 @@ const Aside = () => {
                     &nbsp; Your Library
                   </Nav.Link>
                 </Nav.Item>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <InputGroup className="mt-3">
-                    <Form.Control type="text" placeholder="Search" aria-label="Search" />
+                    <Form.Control type="text" placeholder="Search" aria-label="Search" onChange={handleChange} />
                     <Button variant="dark" className="btn-outline-secondary btn-sm h100">
                       GO
                     </Button>
