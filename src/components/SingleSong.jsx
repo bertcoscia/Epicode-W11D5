@@ -10,11 +10,11 @@ const SingleSong = ({ song }) => {
 
   return (
     <div className="card-container me-3">
-      <Card className="bg-transparent border-0" style={{ cursor: "pointer" }} onClick={() => dispatch({ type: PLAY_SONG, payload: song })}>
+      <Card className="bg-dark" style={{ cursor: "pointer" }} onClick={() => dispatch({ type: PLAY_SONG, payload: song })}>
         <Card.Img variant="" className="mx-auto" src={song.album.cover_xl} style={{ width: "300px !important", height: "300px !important" }} />
         <Card.Body>
           <Card.Title className="text-white line-clamp">{song.title}</Card.Title>
-          <Card.Text className="text-secondary">{song.artist.name}</Card.Text>
+          <Card.Text className="text-secondary line-clamp">{song.artist.name}</Card.Text>
           {isFav ? <HeartFill color="#3CD33C" onClick={() => dispatch(removeFromFavouriteAction(song))} /> : <Heart color="#ffffff" onClick={() => dispatch(addToFavouriteAction(song))} />}
         </Card.Body>
       </Card>

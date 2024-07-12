@@ -187,6 +187,10 @@ ul {
   overflow: hidden;
 }
 
+svg {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 767px) {
   .song-row {
     column-gap: 2rem;
