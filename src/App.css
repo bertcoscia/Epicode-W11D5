@@ -228,4 +228,8 @@ ul {
   .card-container {
     width: 15%;
   }
+
+  .card {
+    text-align: center;
+  }
 }
