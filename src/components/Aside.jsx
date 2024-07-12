@@ -3,32 +3,30 @@ import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
 
 const Aside = () => {
   return (
-    <Col xs={12}>
-      <Nav id="sidebar" className="navbar-expand-md fixed-left justify-content-between">
+    <Col md={3}>
+      <Nav id="sidebar" className="navbar navbar-expand-md fixed-left justify-content-between">
         <Container className="flex-column align-items-start">
-          <Nav.Item>
-            <Nav.Link href="#Home">
-              <img src="./assets/logo/logo.png" alt="Spotify logo" style={{ width: "131px", height: "40px" }} />
-            </Nav.Link>
-          </Nav.Item>
+          <Navbar.Brand href="#Home">
+            <img src="./assets/logo/logo.png" alt="Spotify logo" style={{ width: "131px", height: "40px" }} />
+          </Navbar.Brand>
           <Button className="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </Button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <Navbar>
-              <Nav>
-                <Nav.Link href="#Home" className="d-flex align-items-centre">
-                  <Nav.Item>
-                    <HouseDoorFill />
+              <Nav className="d-flex flex-column row-gap-3">
+                <Nav.Item>
+                  <Nav.Link href="#Home" className="d-flex align-items-centre d-block">
+                    <HouseDoorFill size={25} />
                     &nbsp; Home
-                  </Nav.Item>
-                </Nav.Link>
-                <Nav.Link href="#Home" className="d-flex align-items-centre">
-                  <Nav.Item>
-                    <BookFill />
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="#Home" className="d-flex align-items-centre d-block">
+                    <BookFill size={25} />
                     &nbsp; Your Library
-                  </Nav.Item>
-                </Nav.Link>
+                  </Nav.Link>
+                </Nav.Item>
                 <Form>
                   <InputGroup className="mt-3">
                     <Form.Control type="text" placeholder="Search" aria-label="Search" />
@@ -44,8 +42,7 @@ const Aside = () => {
         <div className="nav-btn">
           <Button className="signup-btn">Sign Up</Button>
           <Button className="login-btn">Login</Button>
-          <a href="#Home">Cookie Policy</a>
-          <a href="#Home">Privacy</a>
+          <a href="#Home">Cookie Policy</a> | <a href="#Home">Privacy</a>
         </div>
       </Nav>
     </Col>
