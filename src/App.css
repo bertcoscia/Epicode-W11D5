@@ -80,12 +80,6 @@ ul {
   background-color: white;
 }
 
-@media screen and (max-width: 936px) {
-  #sidebar {
-    display: none;
-  }
-}
-
 /* BOTTOM PLAYER SECTION*/
 
 .bg-container {
@@ -179,4 +173,59 @@ ul {
   color: #ffffff;
   font-weight: 700;
   padding-top: 50px;
+}
+
+.main-container {
+  flex-grow: 1;
+  height: calc(100vh - 88px);
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .song-row {
+    column-gap: 2rem;
+  }
+
+  .card-container {
+    width: 40%;
+  }
+
+  aside {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 230px;
+  }
+
+  .card-container {
+    width: 22%;
+  }
+
+  .player {
+    margin-left: 230px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card-img {
+    max-width: 300px !important;
+    max-height: 300px !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .card-container {
+    width: 15%;
+  }
 }

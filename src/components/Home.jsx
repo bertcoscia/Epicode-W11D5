@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Aside from "./Aside";
 import Main from "./Main";
 import Player from "./Player";
@@ -6,11 +6,9 @@ import Player from "./Player";
 const Home = () => {
   return (
     <>
-      <Container fluid>
-        <Row>
-          <Aside />
-          <Main />
-        </Row>
+      <Container fluid className="d-flex">
+        <Aside />
+        <Main />
       </Container>
       <Player />
     </>

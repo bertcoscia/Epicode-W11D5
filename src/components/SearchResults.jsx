@@ -12,14 +12,14 @@ const SearchResult = () => {
   return (
     <>
       <Row>
-        <Col xs={10}>
+        <Col xs={12}>
           <div className="song-row">
             <h2>Search Results</h2>
-            <Row className="row-cols-1 row-cols-sm-2 row-cols-lg3 row-cols-xl-4 imgLinks py-3 d-flex flex-nowrap overflow-auto">
-              {searchedSongs.map(song => (
+            <div className="row-cols-1 row-cols-sm-2 row-cols-lg3 row-cols-xl-4 imgLinks py-3 d-flex flex-nowrap overflow-auto">
+              {searchedSongs.slice(0, 10).map(song => (
                 <SingleSong key={song.id} song={song} />
               ))}
-            </Row>
+            </div>
           </div>
         </Col>
       </Row>

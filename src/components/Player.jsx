@@ -3,7 +3,7 @@ import PlayerSong from "./PlayerSong";
 
 const Player = () => {
   return (
-    <Container fluid className="fixed-bottom bg-container pt-1" style={{ marginLeft: "230px" }}>
+    <Container fluid className="fixed-bottom bg-container pt-1 player">
       <Row className="h-100">
         <Col lg={10} className="">
           <Row className="justify-content-center align-items-center h-100">
