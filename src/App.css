@@ -170,3 +170,7 @@ ul {
 .mainPage img {
   width: 200px;
 }
+
+.mainPage {
+  height: calc(100vh - 85px);
+}

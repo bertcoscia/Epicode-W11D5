@@ -3,7 +3,7 @@ import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
 
 const Aside = () => {
   return (
-    <Col md={3}>
+    <Col md={2}>
       <Nav id="sidebar" className="navbar navbar-expand-md fixed-left justify-content-between">
         <Container className="flex-column align-items-start">
           <Navbar.Brand href="#Home">
