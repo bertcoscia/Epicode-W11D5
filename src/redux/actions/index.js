@@ -1,4 +1,6 @@
 export const GET_SONGS = "GET_SONGS";
+export const ADD_TO_FAVOURITE = "ADD_TO_FAVOURITE";
+export const REMOVE_FROM_FAVOURITE = "REMOVE_FROM_FAVOURITE";
 
 export const getSongsAction = (url, query) => {
   return dispatch => {
@@ -20,3 +22,7 @@ export const getSongsAction = (url, query) => {
       .catch(error => console.log(error));
   };
 };
+
+export const addToFavouriteAction = song => ({ type: ADD_TO_FAVOURITE, payload: song });
+
+export const removeFromFavouriteAction = song => ({ type: REMOVE_FROM_FAVOURITE, payload: song });
