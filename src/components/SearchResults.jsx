@@ -16,7 +16,7 @@ const SearchResult = () => {
           <div className="song-row">
             <h2>Search Results</h2>
             <div className="row-cols-1 row-cols-sm-2 row-cols-lg3 row-cols-xl-4 imgLinks py-3 d-flex flex-nowrap overflow-auto">
-              {searchedSongs.slice(0, 10).map(song => (
+              {searchedSongs.slice(0, 15).map(song => (
                 <SingleSong key={song.id} song={song} />
               ))}
             </div>

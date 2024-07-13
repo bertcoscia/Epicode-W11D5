@@ -1,14 +1,8 @@
-import { Heart, HeartFill } from "react-bootstrap-icons";
-import { useDispatch, useSelector } from "react-redux";
-import { addToFavouriteAction, removeFromFavouriteAction } from "../redux/actions";
+import { useSelector } from "react-redux";
 import { Col } from "react-bootstrap";
 
 const PlayerSong = () => {
   const song = useSelector(state => state.playing.song);
-  const favourites = useSelector(state => state.favourite.content);
-  const isFav = favourites.some(fav => fav.id === song.id);
-
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -20,7 +14,6 @@ const PlayerSong = () => {
               <div className="player-title line-clamp">{song.title}</div>
               <small className="player-artist line-clamp">{song.artist.name}</small>
             </div>
-            {isFav ? <HeartFill color="#3CD33C" onClick={() => dispatch(removeFromFavouriteAction(song))} /> : <Heart color="#ffffff" onClick={() => dispatch(addToFavouriteAction(song))} />}
           </div>
         </Col>
       ) : (
@@ -31,7 +24,6 @@ const PlayerSong = () => {
               <div className="player-title line-clamp">Never Gonna Give You Up</div>
               <small className="player-artist line-clamp">Rick Astley</small>
             </div>
-            <HeartFill color="#3CD33C" />
           </div>
         </Col>
       )}

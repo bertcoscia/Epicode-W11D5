@@ -3,10 +3,12 @@ import { Button, Container, Form, InputGroup, Nav, Navbar } from "react-bootstra
 import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 import { getSongsAction } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 const Aside = () => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = event => {
     setQuery(event.target.value);
@@ -32,13 +34,13 @@ const Aside = () => {
             <Navbar>
               <Nav className="d-flex flex-column row-gap-3">
                 <Nav.Item>
-                  <Nav.Link href="#Home" className="d-flex align-items-centre d-block">
+                  <Nav.Link onClick={() => navigate("/")} className="d-flex align-items-centre d-block">
                     <HouseDoorFill size={25} />
                     &nbsp; Home
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="#Home" className="d-flex align-items-centre d-block">
+                  <Nav.Link onClick={() => navigate("/library")} className="d-flex align-items-centre d-block">
                     <BookFill size={25} />
                     &nbsp; Your Library
                   </Nav.Link>
